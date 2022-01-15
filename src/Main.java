@@ -11,9 +11,8 @@ public class Main {
             printMenu();
             System.out.println("------------------------------------------");
             System.out.println("Ваш выбор:");
-            int userInput;
             try {
-                userInput = scanner.nextInt();
+                int userInput = scanner.nextInt();
                 if (userInput == 1) {
                     System.out.println("Введите номер месяца (1-12):");
                     int monthInput = scanner.nextInt();
@@ -50,7 +49,7 @@ public class Main {
                         System.out.println("Введено неверное значение! Повторите ввод:");
                         newGoalInput = scanner.nextInt();
                     }
-                    stepTracker.yourGoal=newGoalInput;
+                    stepTracker.yourGoal = newGoalInput;
                     System.out.println("Новая цель: " + stepTracker.yourGoal);
                 } else if (userInput == 0) {
                     System.out.println("Завершение работы.");
@@ -58,9 +57,9 @@ public class Main {
                 } else {
                     System.out.println("Введена неверная команда. Повторите выбор!");
                 }
-            } catch (InputMismatchException e) {
-                System.out.println("Введено недопустимое значение! Завершение работы.");
-                return;
+            } catch (InputMismatchException exception) {
+                System.out.println("Введена неверная команда. Повторите выбор!");
+                scanner.nextLine();
             }
         }
     }
